@@ -50,7 +50,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         </Button>
       </form>
       <Stack alignItems="flex-start" ml={0} spacing={0}>
-        <Grid className={styles.helperText} pt={5} item>
+        <Grid className={styles.helperText} pt={3} item>
           <Typography>Password must contain:</Typography>
         </Grid>
         <Grid item>
@@ -76,7 +76,9 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         <Grid item>
           <Typography className={styles.helperText}>
             * At least 1 special character{" "}
-            <strong style={{ color: "orange" }}>{characterList}</strong>
+            <strong className={styles.specialCharacters}>
+              {characterList}
+            </strong>
           </Typography>
         </Grid>
       </Stack>
