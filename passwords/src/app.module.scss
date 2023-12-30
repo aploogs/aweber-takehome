@@ -1,15 +1,12 @@
 .app {
   text-align: center;
-  background-color: teal;
-  -webkit-mask-image: url('./background.svg');
-  mask-image: url('./background.svg');
+  background: url('./background.svg');
   background-repeat: no-repeat;
   height: 100vh;
 }
 
 .header {
   background-color: #282c34;
-  // padding-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -50,7 +50,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         </Button>
       </form>
       <Stack alignItems="flex-start" ml={0} spacing={0}>
-        <Grid className={styles.helperText} pt={3} item>
+        <Grid className={styles.helperText} pt={5} item>
           <Typography>Password must contain:</Typography>
         </Grid>
         <Grid item>

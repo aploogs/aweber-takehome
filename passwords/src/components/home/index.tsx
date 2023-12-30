@@ -24,7 +24,6 @@ const Home: React.FC = () => {
     if (!password?.match(regExpression)) {
       return BAD_PASSWORD;
     }
-    //maybe return a color here instead of a value so I can style the input?
   };
 
   const validatePasswordMatch = (
@@ -82,7 +81,7 @@ const Home: React.FC = () => {
 
   return (
     <Box>
-      <Grid container justifyContent="center">
+      <Grid container pt={50} justifyContent="center">
         <PasswordInput
           handleChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             handleInputChange(event)
