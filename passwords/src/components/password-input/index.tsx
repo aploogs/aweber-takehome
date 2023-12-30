@@ -15,7 +15,13 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   password,
   confirmedPassword,
 }) => {
-  const characterList = "(!@#$%^&*()_-+={[}]|<>.)";
+  const passwordRules: string[] = [
+    "* A minimum length of 6 characters",
+    "* At least 1 uppercase character",
+    "* At least 1 lowercase character",
+    "* At least 1 number",
+    "* At least 1 special character (!@#$%^&*()_-+={[}]|<>.)",
+  ];
   return (
     <Box className={styles.password}>
       <form className={styles.form} onSubmit={onSubmit}>
@@ -53,34 +59,11 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         <Grid className={styles.helperText} pt={5} item>
           <Typography>Password must contain:</Typography>
         </Grid>
-        <Grid item>
-          <Typography className={styles.helperText}>
-            * A minimum length of 6 characters
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography className={styles.helperText}>
-            * At least 1 uppercase character
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography className={styles.helperText}>
-            * At least 1 lowercase character
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography className={styles.helperText}>
-            * At least 1 number
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography className={styles.helperText}>
-            * At least 1 special character{" "}
-            <strong className={styles.specialCharacters}>
-              {characterList}
-            </strong>
-          </Typography>
-        </Grid>
+        {passwordRules.map((rule) => (
+          <Grid key={rule} item>
+            <Typography className={styles.helperText}>{rule}</Typography>
+          </Grid>
+        ))}
       </Stack>
     </Box>
   );
